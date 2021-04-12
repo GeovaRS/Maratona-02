@@ -1,0 +1,293 @@
+/* index.css */
+@charset "utf-8";
+
+/* Global */
+:root {
+ --red: #e92929;
+ --green: #49AA26;
+ --light-green: #3dd705;
+ --dark-blue: #363f5f;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+html {
+ /* 15px */
+ font-size: 93.75%;
+}
+
+body {
+ font-family: 'Poppins', sans-serif;
+ background: #f0f2f5;
+}
+
+.sr-only {
+ position: absolute;
+ margin: -1px;
+ border-width: 0;
+ padding: 0;
+ width: 1px;
+ height: 1px;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ white-space: nowrap;
+}
+
+.container {
+ margin: auto;
+ width: min(90vw, 800px);
+}
+
+/* Titles */
+h2 {
+ margin-top: 3.2rem;
+ margin-bottom: 0.8rem;
+ font-weight: normal;
+ color: var(--dark-blue);
+}
+
+/* Links & Buttons */
+a {
+ text-decoration: none;
+ color: var(--green);
+}
+
+a:hover {
+ color: var(--light-green);
+}
+
+button {
+ border: none;
+ border-radius: 0.25rem;
+ padding: 0;
+ width: 100%;
+ height: 50px;
+ color: white;
+ background: var(--green);
+ cursor: pointer;
+
+ -webkit-border-radius: 0.25rem;
+ -moz-border-radius: 0.25rem;
+ -ms-border-radius: 0.25rem;
+ -o-border-radius: 0.25rem;
+}
+
+button:hover {
+ background: var(--light-green);
+}
+
+.button.new {
+ display: inline-block;
+ margin-bottom: .8rem;
+}
+
+.button.cancel {
+ display: flex;
+ border: 2px var(--red) solid;
+ border-radius: 0.25rem;
+ color: var(--red);
+ height: 50px;
+ align-items: center;
+ justify-content: center;
+ opacity: 0.6;
+}
+
+.button.cancel:hover {
+ opacity: 1;
+}
+
+/* Header */
+header {
+ padding: 2rem 0 10rem;
+ text-align: center;
+ background: #2D4A22;
+}
+
+#logo {
+ font-weight: 100;
+ color: #fff;
+}
+
+/* Balance */
+#balance {
+ margin-top: -8rem;
+}
+
+#balance h2 {
+ margin-top:0;
+ color:white;
+}
+
+/* Cards */
+.card {
+ padding: 1.5rem 2rem;
+ border-radius: 0.25rem;
+
+ margin-bottom: 2rem;
+
+ color: var(--dark-blue);
+ background: white;
+}
+
+.card h3 {
+ display: flex;
+ font-weight: normal;
+ font-size: 1rem;
+
+ align-items: center;
+ justify-content: space-between;
+}
+
+.card p {
+ margin-top: 1rem;
+ font-size: 2rem;
+ line-height: 3rem;
+}
+
+.card.total {
+ color: white;
+ background: var(--green);
+}
+
+/* Table */
+#transaction {
+ display: block;
+ width: 100%;
+ overflow-x: auto;
+}
+#data-table {
+ border-spacing: 0 0.5rem;
+ width: 100%;
+ color: #969cb3;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child
+{
+ border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child{
+ border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+ padding: 1rem 2rem;
+ font-weight: normal;
+ text-align: left;
+ background: white;
+}
+
+table tbody tr {
+ opacity: 0.7
+}
+
+table tbody tr:hover {
+ opacity: 1
+}
+
+table tbody td {
+ background:white;
+ padding: 1rem 2rem;
+}
+
+td.description {
+ color: var(--dark-blue);
+}
+
+td.income {
+ color: #12a454;
+}
+
+td.expense {
+ color: #e92929;
+}
+
+/* Modal */
+.modal-overlay {
+ display:flex;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ align-items: center;
+ justify-content: center;
+ background-color: rgba(0,0,0,0.7);
+ opacity: 0;
+ visibility: hidden;
+ z-index: 999;
+}
+
+.modal-overlay.active {
+ opacity: 1;
+ visibility: visible;
+}
+
+.modal-app {
+ position: relative;
+ padding: 2.4rem;
+ background: #F0F2f5;
+ z-index: 1;
+}
+
+/* Form */
+#form {
+ max-width: 500px;
+}
+
+#form h2 {
+ margin-top: 0;
+}
+
+input {
+ border: none;
+ border-radius: 0.2rem;
+ padding: 0.8rem;
+ width: 100%;
+}
+
+.input-group {
+ margin-top: 0.8rem;
+}
+
+.input-group .help{
+ opacity: 0.4;
+}
+
+.input-group.actions {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+ width: 48%;
+}
+
+
+/* Footer */
+footer {
+ text-align: center;
+ padding: 4rem 0 2rem;
+ color: var(--dark-blue);
+ opacity: 0.6;
+}
+
+/* Responsive */
+@media (min-width: 800px) {
+ html {
+  font-size: 87.5%;
+ }
+
+ #balance {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+ }
+}
